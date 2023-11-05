@@ -122,4 +122,4 @@
 <img src="https://img.shields.io/badge/임시-3423A6?style=for-the-badge&logo=nextauth&logoColor=black">
 
 <h3>[협업 tools]</h3>
-figma, slack, github proejcts, issues, notion
+<h5>figma, slack, github proejcts, issues, notion</h5>
