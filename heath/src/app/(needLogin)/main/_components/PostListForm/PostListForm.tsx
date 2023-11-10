@@ -1,12 +1,7 @@
 import { PostCard } from '..'
 import { mainLikedMockData, mainMockData } from '../../_mocks/main.mocks'
+import { PostListFormProps } from './PostListForm.types'
 import * as S from './PostListFrom.styles'
-
-interface PostListFormProps {
-  config: {
-    subtitle: string
-  }
-}
 
 export const PostListForm = ({ config }: PostListFormProps) => {
   const isMainPostList = config.subtitle === '실시간 운동 인증글'

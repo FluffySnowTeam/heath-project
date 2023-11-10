@@ -1,21 +1,8 @@
 'use client'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import * as S from './PostCard.styles'
 import { formattedDateFunc } from '@/utils/formattedDate'
-
-interface PostCardProps {
-  post: {
-    id: number
-    image: StaticImageData
-    title: string
-    content: string
-    created: Date
-    user: {
-      id: string
-      profileImage: StaticImageData
-    }
-  }
-}
+import { PostCardProps } from './PostCard.types'
 
 export const PostCard = ({ post }: PostCardProps) => {
   const Content = (
