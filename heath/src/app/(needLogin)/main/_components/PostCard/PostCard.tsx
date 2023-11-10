@@ -1,7 +1,7 @@
 'use client'
 import Image, { StaticImageData } from 'next/image'
 import * as S from './PostCard.styles'
-import { useEffect, useState } from 'react'
+import { formattedDateFunc } from '@/utils/formattedDate'
 
 interface PostCardProps {
   post: {
@@ -18,29 +18,36 @@ interface PostCardProps {
 }
 
 export const PostCard = ({ post }: PostCardProps) => {
-  // 날짜를 상태로 관리하고, 컴포넌트가 마운트될 때 한 번만 설정합니다.
-  const [dateString, setDateString] = useState('')
+  const Content = (
+    <S.ContentContainer>
+      <S.ContentTitle>{post.title}</S.ContentTitle>
+      <S.Content>{post.content}</S.Content>
+    </S.ContentContainer>
+  )
 
-  useEffect(() => {
-    // 이렇게 하면 클라이언트 사이드에서만 실행되며 서버 렌더링과의 충돌을 피할 수 있습니다.
-    setDateString(post.created.toString())
-  }, [post.created])
+  const User = (
+    <S.UserContainer>
+      <S.UserInfoSection>
+        <S.UserImage>
+          <Image src={post?.user?.profileImage} style={{ objectFit: 'cover' }} alt="user_pofile_image" fill />
+        </S.UserImage>
+        <S.UserId>{post.user.id}</S.UserId>
+      </S.UserInfoSection>
+      <S.PostCreatedDate>
+        {formattedDateFunc(post.created instanceof Date ? post.created : new Date(post.created))}
+      </S.PostCreatedDate>
+    </S.UserContainer>
+  )
+
   return (
     <S.PostCardContainer>
-      <div>
-        <Image src={post?.image} alt="post_main_image" width={180} height={200} />
-      </div>
-      <div>
-        <div>
-          <div>{post.title}</div>
-          <div>{post.content}</div>
-        </div>
-        <div>
-          <Image src={post?.user?.profileImage} alt="user_pofile_image" width={80} />
-          <div>{post.user.id}</div>
-          <div>{dateString}</div>
-        </div>
-      </div>
+      <S.PostCardImage>
+        <Image src={post?.image} alt="post_main_image" width={300} />
+      </S.PostCardImage>
+      <S.ContentUserContainer>
+        {Content}
+        {User}
+      </S.ContentUserContainer>
     </S.PostCardContainer>
   )
 }

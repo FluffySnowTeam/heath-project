@@ -8,4 +8,7 @@ export const PostListTitle = styled.div`
 
 export const PostListFormContainer = styled.div`
   display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
 `

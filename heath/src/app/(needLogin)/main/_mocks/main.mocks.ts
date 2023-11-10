@@ -26,7 +26,7 @@ export const mainMockData = [
   {
     id: 3,
     image: mainImage,
-    title: '오늘의 운동 인증2',
+    title: '오늘의 운동 인증3',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
     created: new Date(),
     user: {
@@ -52,6 +52,17 @@ export const mainLikedMockData = [
     id: 4,
     image: mainImage,
     title: '오늘의 운동 인증4',
+    content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
+    created: new Date(),
+    user: {
+      id: '이영민',
+      profileImage: profileImage,
+    },
+  },
+  {
+    id: 5,
+    image: mainImage,
+    title: '오늘의 운동 인증5',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
     created: new Date(),
     user: {
