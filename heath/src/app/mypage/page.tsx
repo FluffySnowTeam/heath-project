@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
-import SettingImage from '../../../public/images/mypage_setting.png'
 import * as S from './MyPage.styles'
-import { Goals } from './_components'
+import { Goals, InfoModal, GoalModal } from './_components'
+import { useState } from 'react'
 
 const MyPage = () => {
   const UserInfo = (
@@ -14,9 +14,7 @@ const MyPage = () => {
           <S.UserMsg>상태메세지를 입력해주세요.</S.UserMsg>
         </S.UserTextContainer>
       </S.UserInfo>
-      <S.Setting>
-        <Image src={SettingImage} width={30} alt="main_image" />
-      </S.Setting>
+      <InfoModal />
     </S.UserInfoContainer>
   )
 
@@ -24,7 +22,7 @@ const MyPage = () => {
     <S.GoalContainer>
       <S.GoalHeaderContainer>
         <S.GoalText>Your Goal!</S.GoalText>
-        <S.NewGoalButton>새 목표 등록하기</S.NewGoalButton>
+        <GoalModal></GoalModal>
       </S.GoalHeaderContainer>
       <S.Contour />
       <Goals />
