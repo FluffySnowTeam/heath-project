@@ -116,8 +116,8 @@
 <img src="https://img.shields.io/badge/nextjs-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
  <img src="https://img.shields.io/badge/nextauth-3423A6?style=for-the-badge&logo=nextauth&logoColor=black">
  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=black">
- <img src="https://img.shields.io/badge/jotai-FFE801?style=for-the-badge&logo=jotai&logoColor=black"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=black">
-<img src="https://img.shields.io/badge/shadcn css-EC1C24?style=for-the-badge&logo=shadcn&logoColor=black"> <img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=black"> <img src="https://img.shields.io/badge/reacthookform-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white"> <img src="https://img.shields.io/badge/yup-9F55FF?style=for-the-badge&logo=yup&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/Prettier-2D9FD9?style=for-the-badge&logo=Prettier&logoColor=black"> 
+ <img src="https://img.shields.io/badge/jotai-FFE801?style=for-the-badge&logo=jotai&logoColor=black"> <img src="https://img.shields.io/badge/chakraui-319795?style=for-the-badge&logo=chakraui&logoColor=black">
+<img src="https://img.shields.io/badge/emotion-FF8800?style=for-the-badge&logo=emotion&logoColor=black"> <img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=black"> <img src="https://img.shields.io/badge/reacthookform-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white"> <img src="https://img.shields.io/badge/yup-9F55FF?style=for-the-badge&logo=yup&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/Prettier-2D9FD9?style=for-the-badge&logo=Prettier&logoColor=black"> 
 
 <h3>[협업 tools]</h3>
 <h5>figma, slack, github proejcts, issues, notion</h5>
