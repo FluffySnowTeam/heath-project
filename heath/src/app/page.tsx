@@ -1,7 +1,9 @@
+import MainPage from './(needLogin)/main/page'
+
 const Home = () => {
   return (
     <div>
-      <div>Home</div>
+      <MainPage />
     </div>
   )
 }
