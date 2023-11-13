@@ -21,7 +21,7 @@ import {
 export const InfoModal = () => {
   const User = {
     userImg: 'https://bit.ly/dan-abramov',
-    userName: '산책스님',
+    userName: '영마니',
     userMsg: '저는 산책을 좋아합니다.',
   }
   const { isOpen, onOpen, onClose } = useDisclosure()
