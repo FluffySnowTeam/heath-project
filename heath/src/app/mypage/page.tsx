@@ -1,4 +1,6 @@
 'use client'
+import { PostCard } from '../(needLogin)/main/_components'
+import { mainLikedMockData } from '../(needLogin)/main/_mocks/main.mocks'
 import * as S from './MyPage.styles'
 import { Goals, InfoModal, GoalModal } from './_components'
 
@@ -48,6 +50,11 @@ const MyPage = () => {
           {Goal}
         </S.UserContainer>
         {Certification}
+        <div>
+          {mainLikedMockData.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
       </S.MyPageContainer>
     </S.Container>
   )
