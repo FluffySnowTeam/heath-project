@@ -1,8 +1,6 @@
 'use client'
-import Image from 'next/image'
 import * as S from './MyPage.styles'
 import { Goals, InfoModal, GoalModal } from './_components'
-import { useState } from 'react'
 
 const MyPage = () => {
   const UserInfo = (
