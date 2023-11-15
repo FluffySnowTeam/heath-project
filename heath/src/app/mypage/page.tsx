@@ -2,7 +2,7 @@
 import { PostCard } from '../(needLogin)/main/_components'
 import { mainLikedMockData } from '../(needLogin)/main/_mocks/main.mocks'
 import * as S from './MyPage.styles'
-import { Goals, InfoModal, GoalModal } from './_components'
+import { Goals, InfoModal, GoalModal, Certification } from './_components'
 
 const MyPage = () => {
   const UserInfo = (
@@ -37,8 +37,6 @@ const MyPage = () => {
     </S.ExerciseContainer>
   )
 
-  const Certification = <S.CertificationTitle>내 운동 인증글 (11)</S.CertificationTitle>
-
   return (
     <S.Container>
       <S.MyPageContainer>
@@ -49,12 +47,7 @@ const MyPage = () => {
           </S.UserLeftContainer>
           {Goal}
         </S.UserContainer>
-        {Certification}
-        <div>
-          {mainLikedMockData.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+        <Certification />
       </S.MyPageContainer>
     </S.Container>
   )
