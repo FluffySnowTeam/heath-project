@@ -2,7 +2,7 @@
 import { Box, ButtonGroup, Button, Text, Image, Input } from '@chakra-ui/react'
 import { HeartOutlined, HeartFilled } from '@ant-design/icons'
 import * as S from './DetailPage.styles'
-
+import { CommentLists } from './_components'
 
 const DetailPage = () => {
   const post = {
@@ -14,33 +14,8 @@ const DetailPage = () => {
     image:
       'https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=3278&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     isLiked: false,
-      good: 20,
+    good: 20,
   }
-
-  const comments = [
-    {
-      id: 1,
-      userProfileImage: '',
-      userId: '산책스님',
-      content: '너무 이쁘네요 어디인가요?',
-      subComment: [
-        {
-          id: 10,
-          userProfileImage: '',
-          userId: '쪼',
-          content: '안녕하세요 스님',
-        },
-      ],
-    },
-    {
-      id: 2,
-      userProfileImage: '',
-      userId: '산책스님',
-      content: '너무 이쁘네요 어디인가요?',
-      subComment: [],
-    },
-  ]
-
 
   const good = <HeartOutlined style={{ fontSize: '48px' }} />
   const goodgood = <HeartFilled style={{ color: 'red', fontSize: '48px' }} />
@@ -91,24 +66,6 @@ const DetailPage = () => {
     </>
   )
 
-  const Comments = (
-    <>
-      <Box display="flex" alignItems={'end'} mt="3">
-        <Text fontSize="2xl" fontWeight="bold">
-          Comments
-        </Text>
-        <Text size="sm" ml="1" fontWeight={'bold'}>
-          (20)
-        </Text>
-      </Box>
-      <S.Contour />
-      <Box display="flex" mt="3">
-        <Input borderRadius={'20'} mr="3" placeholder="내용을 입력해주세요." />
-        <Button borderRadius={'15'}>댓글달기</Button>
-      </Box>
-    </>
-  )
-
   return (
     <S.Container>
       <S.DetailContainer>
@@ -116,7 +73,7 @@ const DetailPage = () => {
         {PostHeader}
         {PostContents}
         {PostGood}
-        {Comments}
+        <CommentLists />
       </S.DetailContainer>
     </S.Container>
   )
