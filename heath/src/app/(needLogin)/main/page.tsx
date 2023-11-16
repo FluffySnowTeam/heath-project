@@ -6,7 +6,6 @@ import { useDisclosure } from '@chakra-ui/react'
 
 const MainPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const [AddPostModalState, setAddPostModalState] = useState(true)
 
   return (
     <S.MainWrapper>

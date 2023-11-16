@@ -1,9 +1,6 @@
 import { PropsWithChildren } from 'react'
 import * as S from './AddPostContent.styles'
-
-interface AddPostModalProps {
-  onClose: () => void
-}
+import type { AddPostModalProps } from './AddPostContent.types'
 
 export const AddPostContent = ({ onClose }: PropsWithChildren<AddPostModalProps>) => {
   return (

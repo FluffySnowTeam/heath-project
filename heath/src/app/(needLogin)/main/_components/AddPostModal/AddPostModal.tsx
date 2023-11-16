@@ -2,11 +2,7 @@ import { Modal, ModalBody, ModalCloseButton, ModalHeader, ModalOverlay } from '@
 import { PropsWithChildren } from 'react'
 import { AddPostContent } from '..'
 import * as S from './AddPostModal.styles'
-
-interface AddPostModalProps {
-  isOpen: boolean
-  onClose: () => void
-}
+import type { AddPostModalProps } from './AddPostModal.types'
 
 export const AddPostModal = ({ isOpen, onClose }: PropsWithChildren<AddPostModalProps>) => {
   return (
