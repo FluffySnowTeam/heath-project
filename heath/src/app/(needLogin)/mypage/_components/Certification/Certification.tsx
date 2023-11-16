@@ -12,7 +12,7 @@ export const Certification = () => {
       </Text>
       <Grid templateColumns={'repeat(3, 1fr)'} mt="3">
         {mainLikedMockData.map((post) => (
-          <GridItem w="100%">
+          <GridItem>
             <PostCard key={post.id} post={post} />
           </GridItem>
         ))}

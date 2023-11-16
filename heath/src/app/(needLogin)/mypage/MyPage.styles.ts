@@ -88,6 +88,7 @@ export const Contour = styled.hr`
 
 export const ExerciseContainer = styled.div`
   background-color: #eeeeee;
+  width: 90%
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
