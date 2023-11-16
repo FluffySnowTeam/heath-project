@@ -9,7 +9,7 @@ export const MyPageContainer = styled.div`
   background-color: white;
   border-radius: 50px;
   margin-top: 40px;
-  width: 90%;
+  width: 80%;
   padding: 50px;
 `
 
