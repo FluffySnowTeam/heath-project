@@ -28,3 +28,15 @@ export const CommentsMockData = [
     subComment: [],
   },
 ]
+
+export const PostMockData = {
+  title: '달이 예쁘네요.',
+  date: '2023/10/29',
+  author: '영민스님',
+  content: `오늘 산책 했음
+    너무 좋았음`,
+  image:
+    'https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=3278&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  isLiked: false,
+  good: 20,
+}

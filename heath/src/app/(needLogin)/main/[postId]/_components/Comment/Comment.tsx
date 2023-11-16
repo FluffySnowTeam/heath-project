@@ -5,32 +5,23 @@ import { CommentProps } from './Comment.types'
 import { Box, Image, Text, Button } from '@chakra-ui/react'
 
 export const Comment = ({ comment }: CommentProps) => {
-  const userProfileImage = <Image src={comment.userProfileImage} />
-  const userId = (
-    <Text ml="3" fontWeight={'bold'}>
-      {comment.userId}
-    </Text>
-  )
-  const content = <Text ml="3">{comment.content}</Text>
   const CommentLeftSection = (
     <Box display={'flex'}>
-      {userProfileImage}
-      {userId}
-      {content}
+      <Image src={comment.userProfileImage} />
+      <Text ml="3" fontWeight={'bold'}>
+        {comment.userId}
+      </Text>
+      <Text ml="3">{comment.content}</Text>
     </Box>
-  )
-
-  const CommentRightSection = (
-    <Button backgroundColor="white" size="sm">
-      답글달기
-    </Button>
   )
 
   return (
     <>
       <Box display={'flex'} mt="3" justifyContent={'space-between'} alignItems={'center'}>
         {CommentLeftSection}
-        {CommentRightSection}
+        <Button backgroundColor="white" size="sm">
+          답글달기
+        </Button>
       </Box>
       {comment.subComment.map((reply) => (
         <ReplyComment key={reply.id} comment={reply} />

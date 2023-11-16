@@ -3,23 +3,9 @@ import { Box, ButtonGroup, Button, Text, Image, Input } from '@chakra-ui/react'
 import { HeartOutlined, HeartFilled } from '@ant-design/icons'
 import * as S from './DetailPage.styles'
 import { CommentLists } from './_components'
+import { PostMockData } from './_mocks/detail.mocks'
 
 const DetailPage = () => {
-  const post = {
-    title: '달이 예쁘네요.',
-    date: '2023/10/29',
-    author: '영민스님',
-    content: `오늘 산책 했음
-    너무 좋았음`,
-    image:
-      'https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=3278&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    isLiked: false,
-    good: 20,
-  }
-
-  const good = <HeartOutlined style={{ fontSize: '48px' }} />
-  const goodgood = <HeartFilled style={{ color: 'red', fontSize: '48px' }} />
-
   const SettingPost = (
     <ButtonGroup display={'flex'} justifyContent={'end'}>
       <Button size="s" backgroundColor="white" color="#555555">
@@ -35,9 +21,9 @@ const DetailPage = () => {
     <>
       <Box display="flex" justifyContent={'space-between'} alignItems={'end'} mt="1">
         <Text fontSize="3xl" fontWeight={'bold'}>
-          {post.title}
+          {PostMockData.title}
         </Text>
-        <Text color="#888888">작성일자: {post.date} </Text>
+        <Text color="#888888">작성일자: {PostMockData.date} </Text>
       </Box>
       <S.Contour />
     </>
@@ -46,7 +32,7 @@ const DetailPage = () => {
   const PostContents = (
     <>
       <Image
-        src={post.image}
+        src={PostMockData.image}
         alt="content image"
         mt="6"
         borderRadius={'20'}
@@ -55,14 +41,7 @@ const DetailPage = () => {
         alignSelf={'center'}
         objectFit={'cover'}
       />
-      <Text mt="4">{post.content}</Text>
-    </>
-  )
-
-  const PostGood = (
-    <>
-      <S.GoodBtn>{goodgood}</S.GoodBtn>
-      <Text fontWeight={'bold'}>좋아요 {post.good}개</Text>
+      <Text mt="4">{PostMockData.content}</Text>
     </>
   )
 
@@ -72,7 +51,14 @@ const DetailPage = () => {
         {SettingPost}
         {PostHeader}
         {PostContents}
-        {PostGood}
+        <S.GoodBtn>
+          {PostMockData.isLiked ? (
+            <HeartFilled style={{ color: 'red', fontSize: '48px' }} />
+          ) : (
+            <HeartOutlined style={{ fontSize: '48px' }} />
+          )}
+        </S.GoodBtn>
+        <Text fontWeight={'bold'}>좋아요 {PostMockData.good}개</Text>
         <CommentLists />
       </S.DetailContainer>
     </S.Container>

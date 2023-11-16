@@ -5,9 +5,6 @@ import { Comment, ReplyComment } from '..'
 
 export const CommentLists = () => {
   let NumberComments = CommentsMockData.length
-  for (let i = 0; i < CommentsMockData.length; i++) {
-    NumberComments += CommentsMockData[i].subComment.length
-  }
   const CommentsHeader = (
     <>
       <Box display="flex" alignItems={'end'} mt="3">
