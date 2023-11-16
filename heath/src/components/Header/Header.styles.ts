@@ -15,3 +15,7 @@ export const HeaderBorder = styled.div`
   width: 100%; // 너비를 부모 요소와 동일하게 설정
   border-top: 1px solid #000; // 상단에 검은색 테두리 적용
 `
+
+export const HeaderIcon = styled.div`
+  cursor: pointer;
+`
