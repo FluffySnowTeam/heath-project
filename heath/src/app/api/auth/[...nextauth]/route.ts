@@ -13,6 +13,13 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET as string,
     }),
   ],
+  // jwt: {
+  //   async decode({ token, secret }) {
+  //     // JWT 디코딩 및 복호화 로직
+  //     // 예시: 기본 디코딩 로직 사용
+  //     return NextAuth.jwt.decode({ token, secret })
+  //   },
+  // },
   session: {
     strategy: 'jwt',
     maxAge: 24 * 60 * 60, //하루

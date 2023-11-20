@@ -28,16 +28,19 @@ export const Header = () => {
         >
           <Image src={logo} width={120} alt="main_logo" />
         </S.HeaderIcon>
-        {!isLoginPage && (
-          <S.HeaderIcon
-            onClick={() => {
-              handleMoveToPage('mypage')
-            }}
-          >
-            <Image src={smile} width={40} alt="main_logo" />
-          </S.HeaderIcon>
+        {!isLoginPage && session && (
+          <>
+            <S.HeaderIcon
+              onClick={() => {
+                handleMoveToPage('mypage')
+              }}
+            >
+              <Image src={smile} width={40} alt="main_logo" />
+              <div>{session.data?.user?.name} 님</div>
+            </S.HeaderIcon>
+          </>
         )}
-        {session && (
+        {!isLoginPage && !session && (
           <>
             <Button
               onClick={() => {

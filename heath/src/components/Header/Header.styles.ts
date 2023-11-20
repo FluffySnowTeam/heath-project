@@ -18,4 +18,11 @@ export const HeaderBorder = styled.div`
 
 export const HeaderIcon = styled.div`
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin-left: 10px;
+    font-weight: bold;
+  }
 `

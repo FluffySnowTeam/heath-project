@@ -8,8 +8,8 @@ import { signIn, useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 
 export const Buttons = () => {
-  const { data: session } = useSession()
-  console.log(session)
+  // const { data: session } = useSession()
+  // console.log(session?.accessToken)
 
   // useEffect(() => {
   //   if (session) {
@@ -23,7 +23,7 @@ export const Buttons = () => {
   //       method: 'POST',
   //       headers: {
   //         'Content-Type': 'application/json',
-  //         Authorization: `Bearer ${session.accessToken}`,
+  //         accessToken: `${session.accessToken}`,
   //       },
   //       body: JSON.stringify({ token: session.accessToken }),
   //     })
