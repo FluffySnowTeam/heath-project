@@ -1,7 +1,7 @@
 'use client'
 
 import * as S from './MyPage.styles'
-import { Goals, InfoModal, GoalModal } from './_components'
+import { Goals, InfoModal, GoalModal, Certification } from './_components'
 
 const MyPage = () => {
   const UserInfo = (
@@ -46,8 +46,7 @@ const MyPage = () => {
           </S.UserLeftContainer>
           {Goal}
         </S.UserContainer>
-        {/* 이부분 에러나서 주석해놨습니다! 수정 부탁드려용 */}
-        {/* <Certification /> */}
+        <Certification />
       </S.MyPageContainer>
     </S.Container>
   )

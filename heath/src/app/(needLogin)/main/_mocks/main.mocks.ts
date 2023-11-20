@@ -2,7 +2,7 @@ import mainImage from '/public/images/testImage.png'
 import profileImage from '/public/images/testProfileImage.png'
 export const mainMockData = [
   {
-    id: 1,
+    id: '1',
     image: mainImage,
     title: '오늘의 운동 인증1',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
@@ -13,7 +13,7 @@ export const mainMockData = [
     },
   },
   {
-    id: 2,
+    id: '2',
     image: mainImage,
     title: '오늘의 운동 인증2',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
@@ -24,7 +24,7 @@ export const mainMockData = [
     },
   },
   {
-    id: 3,
+    id: '3',
     image: mainImage,
     title: '오늘의 운동 인증3',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
@@ -38,7 +38,7 @@ export const mainMockData = [
 
 export const mainLikedMockData = [
   {
-    id: 3,
+    id: '4',
     image: mainImage,
     title: '오늘의 운동 인증3',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
@@ -49,7 +49,7 @@ export const mainLikedMockData = [
     },
   },
   {
-    id: 4,
+    id: '5',
     image: mainImage,
     title: '오늘의 운동 인증4',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
@@ -60,7 +60,7 @@ export const mainLikedMockData = [
     },
   },
   {
-    id: 5,
+    id: '6',
     image: mainImage,
     title: '오늘의 운동 인증5',
     content: '오늘은 산책하는 날! 날씨가 너무 좋았다!',
