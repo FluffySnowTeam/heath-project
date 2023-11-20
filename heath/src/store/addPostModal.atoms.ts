@@ -1,3 +1,13 @@
 import { atom } from 'jotai'
 
-export const AddPostImageState = atom({ imageUrl: '' })
+interface IAddPostState {
+  title: string
+  content: string
+  imageUrl: string
+}
+
+export const AddPostState = atom<IAddPostState>({
+  title: '',
+  content: '',
+  imageUrl: '',
+})

@@ -2,12 +2,14 @@ import { PropsWithChildren, useRef } from 'react'
 import * as S from './AddPostContent.styles'
 import type { AddPostModalProps } from './AddPostContent.types'
 import { useAtom } from 'jotai'
-import { AddPostImageState } from '@/store/addPostModal.atoms'
+import { AddPostState } from '@/store/addPostModal.atoms'
 import Image from 'next/image'
 
 export const AddPostContent = ({ onClose }: PropsWithChildren<AddPostModalProps>) => {
-  const [postImage, setPostImage] = useAtom(AddPostImageState)
+  const [postData, setPostData] = useAtom(AddPostState)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  console.log(postData)
 
   const handleUploadButtonClick = () => {
     if (inputRef.current) {
@@ -22,7 +24,7 @@ export const AddPostContent = ({ onClose }: PropsWithChildren<AddPostModalProps>
     const file = e.target.files[0]
     const imageUrl = URL.createObjectURL(file)
 
-    setPostImage((prev) => ({ ...prev, imageUrl }))
+    setPostData((prev) => ({ ...prev, imageUrl }))
   }
 
   return (
@@ -39,9 +41,9 @@ export const AddPostContent = ({ onClose }: PropsWithChildren<AddPostModalProps>
       <S.ImageSection>
         <input type="file" accept="image/*" ref={inputRef} style={{ display: 'none' }} onChange={handleUploadImage} />
         <S.AddImageIcon onClick={handleUploadButtonClick} />
-        {postImage.imageUrl && (
+        {postData.imageUrl && (
           <S.ImageBox>
-            <Image style={{ objectFit: 'contain' }} src={postImage.imageUrl} alt="postImage" fill />
+            <Image style={{ objectFit: 'contain' }} src={postData.imageUrl} alt="postImage" fill />
           </S.ImageBox>
         )}
       </S.ImageSection>
