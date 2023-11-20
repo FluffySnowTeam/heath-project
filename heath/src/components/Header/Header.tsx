@@ -4,11 +4,14 @@ import logo from '../../../public/images/main_logo.png'
 import smile from '../../../public/images/smile_icon.png'
 import * as S from './Header.styles'
 import { usePathname, useRouter } from 'next/navigation'
+import { signOut, useSession } from 'next-auth/react'
+import { Button } from '@chakra-ui/react'
 
 export const Header = () => {
   const pathname = usePathname()
   const isLoginPage = pathname === '/login'
   const router = useRouter()
+  const session = useSession()
 
   const handleMoveToPage = (path: string) => {
     if (path === 'main') router.push(`/main`)
@@ -33,6 +36,18 @@ export const Header = () => {
           >
             <Image src={smile} width={40} alt="main_logo" />
           </S.HeaderIcon>
+        )}
+        {session && (
+          <>
+            <Button
+              onClick={() => {
+                signOut()
+              }}
+            >
+              {' '}
+              로그아웃{' '}
+            </Button>
+          </>
         )}
       </S.HeaderSection>
       <S.HeaderBorder />
