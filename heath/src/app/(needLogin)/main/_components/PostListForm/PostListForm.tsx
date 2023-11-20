@@ -29,7 +29,7 @@ export const PostListForm = ({ config }: PostListFormProps) => {
 
   const likePostList = (
     <S.PostListFormContainer>
-      {mainLikedMockData.map((post) => (
+      {mainLikedMockData.slice(0, 3).map((post) => (
         <S.PostListFormWrapper
           onClick={() => {
             handleMoveToDetail(post.id)
