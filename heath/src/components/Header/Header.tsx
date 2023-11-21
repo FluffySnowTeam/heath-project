@@ -40,18 +40,15 @@ export const Header = () => {
             </S.HeaderIcon>
           </>
         )}
-        {!isLoginPage && !session && (
-          <>
-            <Button
-              onClick={() => {
-                signOut()
-              }}
-            >
-              {' '}
-              로그아웃{' '}
-            </Button>
-          </>
-        )}
+
+        <Button
+          onClick={() => {
+            signOut()
+          }}
+        >
+          {' '}
+          로그아웃{' '}
+        </Button>
       </S.HeaderSection>
       <S.HeaderBorder />
     </S.HeaderContainer>

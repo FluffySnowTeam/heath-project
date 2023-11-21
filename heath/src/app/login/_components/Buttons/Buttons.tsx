@@ -8,34 +8,69 @@ import { signIn, useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 
 export const Buttons = () => {
-  // const { data: session } = useSession()
-  // console.log(session?.accessToken)
-
+  const { data: session } = useSession()
+  // console.log(session?.id_token)
   // useEffect(() => {
   //   if (session) {
-  //     sendTokenToBackend()
+  //     // sendTokenToBackend()
+  //     handleLogout()
+  //     // getUsertoken()
   //   }
   // }, [session])
 
-  // const sendTokenToBackend = async () => {
-  //   if (session) {
-  //     const response = await fetch('http://211.201.26.10:8080/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         accessToken: `${session.accessToken}`,
-  //       },
-  //       body: JSON.stringify({ token: session.accessToken }),
-  //     })
-  //     if (!response.ok) {
-  //       // 에러 처리
-  //       console.error('Error sending token to backend')
-  //     } else {
-  //       const responseData = await response.json()
-  //       console.log('Token sent successfully', responseData)
-  //     }
-  //   }
+  // const getUsertoken = async () => {
+  //   const reponse = await fetch('http://211.201.26.10:8080/members/3', {
+  //     method: 'GET',
+  //   })
+  //   const data = await reponse.json()
+  //   console.log(data)
   // }
+
+  const handleLogout = async () => {
+    if (session) {
+      const response = await fetch('http://211.201.26.10:8080/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // 나중에 삭제 가능
+          accessToken: `${session?.id_token}`,
+        },
+      })
+      if (!response.ok) {
+        // 에러 처리
+        console.error('Error sending token to backend')
+        return
+      }
+
+      if (response.headers.get('content-type')?.includes('application/json')) {
+        const responseData = await response.json()
+        console.log('Token sent successfully', responseData)
+      } else {
+        console.log('Logout successful, no JSON response')
+      }
+    }
+  }
+
+  const sendTokenToBackend = async () => {
+    if (session) {
+      const response = await fetch('http://211.201.26.10:8080/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // 나중에 삭제 가능
+          accessToken: `${session?.id_token}`,
+        },
+        body: JSON.stringify({ token: session?.id_token }),
+      })
+      if (!response.ok) {
+        // 에러 처리
+        console.error('Error sending token to backend')
+      } else {
+        const responseData = await response.json()
+        console.log('Token sent successfully', responseData)
+      }
+    }
+  }
 
   const handleSignIn = async (provider: string) => {
     signIn(provider)
