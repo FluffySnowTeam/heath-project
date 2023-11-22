@@ -11,6 +11,17 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET as string,
+      authorization: { params: { scope: 'openid email profile' } },
+      idToken: true,
+      checks: ['pkce', 'state'],
+      profile(profile) {
+        return {
+          id: profile.sub,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture,
+        }
+      },
     }),
   ],
   session: {
@@ -23,6 +34,7 @@ export const authOptions: AuthOptions = {
       if (account && user) {
         token.accessToken = account.access_token
         token.user = user
+        token.id_token = account.id_token
         token.user.image = user.image // 사용자 이미지 정보 추가
       }
       return token
@@ -32,12 +44,13 @@ export const authOptions: AuthOptions = {
       if (token) {
         session.accessToken = token.accessToken
         session.user = token.user
+        session.id_token = token.id_token
         session.user.image = token.user.image
       }
       return session
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
 }
 
 const handler = NextAuth(authOptions)

@@ -28,27 +28,27 @@ export const Header = () => {
         >
           <Image src={logo} width={120} alt="main_logo" />
         </S.HeaderIcon>
-        {!isLoginPage && (
-          <S.HeaderIcon
-            onClick={() => {
-              handleMoveToPage('mypage')
-            }}
-          >
-            <Image src={smile} width={40} alt="main_logo" />
-          </S.HeaderIcon>
-        )}
-        {session && (
+        {!isLoginPage && session && (
           <>
-            <Button
+            <S.HeaderIcon
               onClick={() => {
-                signOut()
+                handleMoveToPage('mypage')
               }}
             >
-              {' '}
-              로그아웃{' '}
-            </Button>
+              <Image src={smile} width={40} alt="main_logo" />
+              <div>{session.data?.user?.name} 님</div>
+            </S.HeaderIcon>
           </>
         )}
+
+        <Button
+          onClick={() => {
+            signOut()
+          }}
+        >
+          {' '}
+          로그아웃{' '}
+        </Button>
       </S.HeaderSection>
       <S.HeaderBorder />
     </S.HeaderContainer>

@@ -66,4 +66,17 @@ export const ImageSection = styled.div`
 export const AddImageIcon = styled(PlusSquareOutlined)`
   font-size: 120px;
   color: #becbeb;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  :hover {
+    color: #999999;
+  }
+`
+
+export const ImageBox = styled.div`
+  position: relative;
+  width: 160px;
+  height: 200px;
+  border-radius: 20px;
+  margin-left: 20px;
 `
