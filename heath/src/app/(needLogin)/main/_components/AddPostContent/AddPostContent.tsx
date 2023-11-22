@@ -52,10 +52,9 @@ export const AddPostContent = ({ onClose }: PropsWithChildren<AddPostModalProps>
       headers: {
         'Content-Type': 'application/json',
         // 나중에 삭제 가능
-        accessToken:
-          'eyJhbGciOiJSUzI1NiIsImtpZCI6IjViMzcwNjk2MGUzZTYwMDI0YTI2NTVlNzhjZmE2M2Y4N2M5N2QzMDkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4MTk0MjU5NTI5ODAtcW42djN1czc5MHRiN2thZjdmYjlzbmFpN3A1ZHF0ZXUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4MTk0MjU5NTI5ODAtcW42djN1czc5MHRiN2thZjdmYjlzbmFpN3A1ZHF0ZXUuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTcxMzc2MjM4MDc3NDM3OTAwOTciLCJlbWFpbCI6Inppdml2bGVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiIySzlqUDFUTndObWdfeUFvX2htN3BBIiwibmFtZSI6IuyngOyEseqyvSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMd0wtV3hSLXNsbVNzR3R2WVRVeEdZVXRuSlFPX3ZFc3RSV0NnX1FLdktSc2s9czk2LWMiLCJnaXZlbl9uYW1lIjoi7ISx6rK9IiwiZmFtaWx5X25hbWUiOiLsp4AiLCJsb2NhbGUiOiJrbyIsImlhdCI6MTcwMDU1MTQ5OSwiZXhwIjoxNzAwNTU1MDk5fQ.gcHt-vUPTmWM3IWOikb7ZR6dOb8JsSYjWyax_7JTIqTemT3OrfKP7ETbiI9lpz1a5Rf4xUhQH05eVXwiTglrJW87XRPXbBChePg4xpwhla-v88Y-cIhGDcM0O34GIiOAAhiwKj57a-WmYb-oBbD0vn2HAP5SpZAQPC3aftX6bf6iHAUjp08UXE7XVLItCF3Iw3-jll4oNuFpEEqE0Li3RSLdlbyfqq4EXlGE1y8627SfZNavwdJni0kP8apAOU2YoOaKP5Ga_coh52AU4n0x2vbCdvzhI6twU3kmDKGWWjLwS8mTt495jLJm1ByhPxh48-iupt746aqbrEuC_DS22g',
       },
       body: JSON.stringify(postData),
+      credentials: 'include',
     })
     if (!response.ok) {
       console.error('Error sending post data')

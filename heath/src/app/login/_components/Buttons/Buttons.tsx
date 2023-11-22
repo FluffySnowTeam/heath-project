@@ -12,8 +12,8 @@ export const Buttons = () => {
   // console.log(session?.id_token)
   // useEffect(() => {
   //   if (session) {
-  //     // sendTokenToBackend()
-  //     handleLogout()
+  //     sendTokenToBackend()
+  //     // handleLogout()
   //     // getUsertoken()
   //   }
   // }, [session])
