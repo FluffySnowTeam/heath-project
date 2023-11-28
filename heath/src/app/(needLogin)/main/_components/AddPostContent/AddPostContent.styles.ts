@@ -2,19 +2,6 @@ import { PlusSquareOutlined } from '@ant-design/icons'
 import { Button, Textarea } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
-export const AddPostHead = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  margin-top: 15px;
-`
-
-export const AddPostTitle = styled.div`
-  font-size: 24px;
-  font-weight: 800;
-`
-
 export const SubmitButton = styled(Button)`
   margin-left: 10px;
   border-radius: 20px;
@@ -44,6 +31,22 @@ export const CancelButton = styled(Button)`
     color: black;
   }
 `
+
+
+export const AddPostHead = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+`
+
+export const AddPostTitle = styled.div`
+  font-size: 24px;
+  font-weight: 800;
+`
+
+
 
 export const TitleInput = styled.input`
   border-bottom: 1px solid #555555;

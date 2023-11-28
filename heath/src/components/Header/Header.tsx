@@ -41,14 +41,14 @@ export const Header = () => {
           </>
         )}
 
-        <Button
+        {/* <Button
           onClick={() => {
             signOut()
           }}
         >
           {' '}
           로그아웃{' '}
-        </Button>
+        </Button> */}
       </S.HeaderSection>
       <S.HeaderBorder />
     </S.HeaderContainer>

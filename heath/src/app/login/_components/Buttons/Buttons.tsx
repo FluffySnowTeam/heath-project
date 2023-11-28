@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 export const Buttons = () => {
   const { data: session } = useSession()
-  // console.log(session?.id_token)
+  console.log(session?.accessToken)
   // useEffect(() => {
   //   if (session) {
   //     sendTokenToBackend()
